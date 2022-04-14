@@ -7,11 +7,11 @@ import React, { Component } from "react";
 //   Route,
 //   Redirect
 // } from "react-router-dom";
-// import home from "./Page/Home";
+import Home from "./Page/Home";
 class App extends Component {
   render() {
     return (
-      <h1>hi</h1>
+  <Home />
     );
   }
 }
