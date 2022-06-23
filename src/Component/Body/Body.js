@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 // import { withRouter } from "react-router";
 import "./Body.css"
-import Operning from "../../Content/Operning";
+import Opening from "../../Content/Opening";
+import AboutMe from "../../Content/AboutMe";
 // import Carousel from "../../Molekul/Carousel";
 class Body extends Component {
   render() {
@@ -9,7 +10,8 @@ class Body extends Component {
       <div className="body">
         {/* <Carousel/> */}
         
-<Operning/>
+<Opening/>
+<AboutMe/>
       </div>
     );
   }
