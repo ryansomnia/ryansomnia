@@ -1,43 +1,135 @@
-.App {
-  text-align: center;
-  /* background-color: #282c34; */
+*{
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-h1 {
-  color: #282c34;
-}
-.App-body {
-  /* background-color: #282c34; */
-
-  min-height: 100vh;
+.header {
+  /* background-color: aqua; */
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  /* background-color: yellow; */
+  padding:0px 10%;
+  /* flex-direction: row; */
+}
+
+img {
+  height: 150px;
+  width: 150px;
+  flex: 0,5;
+  background-color: #225D94;
+}
+
+.logo {
+  cursor: pointer;
+}
+nav ul {
+  list-style: none;
+}
+nav ul li {
+  display: inline-block;
+  padding: 0 20px;
+  text-decoration: none;
+  
+}
+nav ul li a {
+  color: #222F4B;
+  transition: all 0.3s ease 0%;
+  text-decoration: none;
+font-style: normal;
+font-weight: 700;
+font-size: 25px;
+line-height: 30px;
+text-align: center;
+
+}
+nav ul li a:hover {
+  color: #225D94;
+  text-decoration: none;
+}
+@media screen and (max-width: 400px) {
+  .opening{
+      margin-left: 10%;
+      margin-right: 10%;
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+  }
+  .opening .text {
+      margin-bottom: 5%;
+      font-size: 25px;
+      align-items: center;
+  }
+  .opening h6 {
+      display: flex;
+      justify-content: center;
+  }
+  .opening .alinea {
+      font-weight: 300;
+      font-size: 12px;
+  } 
+  .opening .myPhoto{
+      height: 100px;
+      width: 100px;
+      border-radius: 50% ;
+      border: 5px solid #060644;
+  }
+  
+}
+.opening{
+  height: 350px;
+  margin-left: 70px;
+  display: flex;
+  flex-direction: row;
+}
+.opening .left{
+  margin-top: 80px;
+  flex: 0.6;
+  
+
+}
+.opening .right{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-right: 134px;
+  flex: 0.4;
+}
+.opening .text {
+  margin-top: 30px;
+  margin-left: 20px;
+  width: 80%;
+  height: 70px;
+  font-size: 70px;
+}
+.opening h6 {
+  margin-left: 30px;
+  color: black;
+}
+.opening .alinea {
+  margin-top: 50px;
+  margin-left: 20px;
+  color: black;
+} 
+.opening .alinea p {
+  margin: 31px;
+  color: black;
+  font-weight: 300;
+  font-size: 25px;
+
+} 
+.opening .myPhoto{
+  align-self: center;
+  height: 350px;
+  width: 350px;
+  border-radius: 50% ;
+  border: 13px solid #060644;
+  margin-top: 140px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.about{
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+  height: 350px;
 }

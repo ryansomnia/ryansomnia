@@ -1,4 +1,4 @@
-import "./Opening.css"
+// import "./Opening.css"
 
 import React, { Component } from 'react'
 // import Carousel from "../Molekul/Carousel"
@@ -22,7 +22,7 @@ export default class Operning extends Component {
           </div>  
           <div className="right">
            {/* <Carousel/> */}
-           <img src={MyPhoto} className="myPhoto"/>
+           <img src={MyPhoto} className="myPhoto" alt='myPhoto'/>
           </div>  
           
       </div>
