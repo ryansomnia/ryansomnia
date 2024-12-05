@@ -8,7 +8,7 @@ const ProjectSection = () => {
   const projects = [
     {
       title: 'Hospital QR Web Project',
-      image: 'qr.png',
+      image: '/qr.png',
       stack: ['React', 'Node.js', 'MongoDB', 'QR Code'],
       highlight:
         'A web application that generates PCR test documents with a QR code for hospital verification.',
@@ -32,7 +32,7 @@ const ProjectSection = () => {
     // },
     {
       title: 'Sekolah Cerdas Bangsa',
-      image: 'webcerdasbangsa.png',
+      image: '/webcerdasbangsa.png',
       stack: ['React js', 'Nodejs', 'MySQL'],
       highlight:
         'A landing page for a private school that includes an admin panel for content management.',
@@ -40,7 +40,7 @@ const ProjectSection = () => {
     },
     {
       title: 'My Access BRILIFE as Backend',
-      image: 'myaccess.png',
+      image: '/myaccess.png',
       stack: ['Nodejs', 'MSSQL', 'JavaScript'],
       highlight:
         'BRI Life MyAccess is a mobile application designed for BRI Life insurance policyholders to access information, conduct transactions, and utilize policy-related services.This application aims to provide convenience, comfort, and security in transactions and services for policyholders.',
@@ -61,6 +61,8 @@ const ProjectSection = () => {
           >
             <Image
               src={project.image}
+              width={640} // Tambahkan nilai width
+              height={256} // Tambahkan nilai height 
               alt={project.title}
               className="w-full h-64 object-cover"
             />

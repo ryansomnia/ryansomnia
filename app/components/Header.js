@@ -1,4 +1,4 @@
-"use client";  // Menambahkan 'use client' di sini
+"use client"; // Menambahkan 'use client' di sini
 import Image from 'next/image';
 
 import React from 'react';
@@ -9,9 +9,11 @@ const Header = () => {
       <div className="container mx-auto px-6 text-center">
         <div className="flex flex-col items-center">
           <Image
-            src="head.jpg"
+            src="/head.jpg" // Pastikan path gambar benar
             alt="Heriyanto Sitorus"
-            className="w-44 h-44 mt-12 rounded-lg object-cover border-4 border-white shadow-lg transform transition-transform duration-300 hover:scale-105"
+            width={176} // Tambahkan width
+            height={176} // Tambahkan height
+            className="mt-12 rounded-lg object-cover border-4 border-white shadow-lg transform transition-transform duration-300 hover:scale-105"
           />
           <div className="mt-8 max-w-3xl">
             <h1 className="text-4xl font-bold uppercase tracking-wider text-white mb-4">
