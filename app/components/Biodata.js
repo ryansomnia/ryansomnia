@@ -1,5 +1,5 @@
 "use client";  // Menambahkan 'use client' di sini
-
+import Image from 'next/image';
 
 import React from 'react';
 
@@ -10,7 +10,7 @@ const BioData = () => {
       <div className="max-w-5xl w-full bg-white rounded-lg shadow-lg p-8 flex flex-col md:flex-row gap-8">
         {/* Photo Section */}
         <div className="flex-shrink-0">
-          <img
+          <Image
             src="bio.png"
             alt="Heriyanto's Activity"
             className="w-64 h-64 md:w-80 md:h-96 object-cover rounded-lg shadow-md"

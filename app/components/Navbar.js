@@ -1,5 +1,6 @@
 "use client"; // Pastikan "use client" ada di file ini
 
+import Link from "next/link";
 import React, { useState } from "react";
 
 const Navbar = ({ onAboutClick, onProjectsClick, onContactClick }) => {
@@ -14,37 +15,37 @@ const Navbar = ({ onAboutClick, onProjectsClick, onContactClick }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
         {/* Logo */}
         <div className="text-teal-700 text-xl font-bold uppercase tracking-wide">
-          <a href="/">Heriyanto Sitorus</a>
+          <Link href="/">Heriyanto Sitorus</Link>
         </div>
 
         {/* Menu untuk Desktop */}
         <ul className="hidden md:flex space-x-6">
           <li>
-            <a
+            <Link
               href="#about"
               onClick={onAboutClick}
               className="text-teal-600 hover:text-amber-600 hover:underline hover:underline-offset-4 transition duration-300 font-medium"
             >
               About
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href="#projects"
               onClick={onProjectsClick}
               className="text-teal-600 hover:text-amber-600 hover:underline hover:underline-offset-4 transition duration-300 font-medium"
             >
               Projects
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href="#contact"
               onClick={onContactClick}
               className="text-teal-600 hover:text-amber-600 hover:underline hover:underline-offset-4 transition duration-300 font-medium"
             >
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
 
@@ -102,7 +103,7 @@ const Navbar = ({ onAboutClick, onProjectsClick, onContactClick }) => {
         </div>
         <ul className="flex flex-col space-y-4 px-4 py-4">
           <li>
-            <a
+            <Link
               href="#about"
               onClick={() => {
                 onAboutClick();
@@ -111,10 +112,10 @@ const Navbar = ({ onAboutClick, onProjectsClick, onContactClick }) => {
               className="text-teal-600 hover:text-amber-600 hover:underline hover:underline-offset-4 transition duration-300 font-medium"
             >
               About
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href="#projects"
               onClick={() => {
                 onProjectsClick();
@@ -123,10 +124,10 @@ const Navbar = ({ onAboutClick, onProjectsClick, onContactClick }) => {
               className="text-teal-600 hover:text-amber-600 hover:underline hover:underline-offset-4 transition duration-300 font-medium"
             >
               Projects
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href="#contact"
               onClick={() => {
                 onContactClick();
@@ -135,7 +136,7 @@ const Navbar = ({ onAboutClick, onProjectsClick, onContactClick }) => {
               className="text-teal-600 hover:text-amber-600 hover:underline hover:underline-offset-4 transition duration-300 font-medium"
             >
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

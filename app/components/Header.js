@@ -1,5 +1,5 @@
 "use client";  // Menambahkan 'use client' di sini
-
+import Image from 'next/image';
 
 import React from 'react';
 
@@ -8,7 +8,7 @@ const Header = () => {
     <header className="bg-gradient-to-r from-indigo-900 via-blue-800 to-teal-600 text-white py-16 flex justify-center items-center">
       <div className="container mx-auto px-6 text-center">
         <div className="flex flex-col items-center">
-          <img
+          <Image
             src="head.jpg"
             alt="Heriyanto Sitorus"
             className="w-44 h-44 mt-12 rounded-lg object-cover border-4 border-white shadow-lg transform transition-transform duration-300 hover:scale-105"

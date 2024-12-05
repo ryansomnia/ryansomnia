@@ -1,5 +1,6 @@
 "use client";  // Menambahkan 'use client' di sini
 
+import Image from 'next/image';
 
 import React from 'react';
 
@@ -58,7 +59,7 @@ const ProjectSection = () => {
             className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105"
             key={index}
           >
-            <img
+            <Image
               src={project.image}
               alt={project.title}
               className="w-full h-64 object-cover"
