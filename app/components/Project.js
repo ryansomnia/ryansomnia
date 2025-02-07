@@ -14,22 +14,14 @@ const ProjectSection = () => {
         'A web application that generates PCR test documents with a QR code for hospital verification.',
       link: null,
     },
-    // {
-    //   title: 'Office Management System',
-    //   image: 'https://picsum.photos/id/238/400/300',
-    //   stack: ['React', 'SQL', 'Kafka'],
-    //   highlight:
-    //     'An office management system that automates workflows, reduces paperwork, and tracks employee progress.',
-    //   link: 'https://sekolahcerdasbangsa.sch.id',
-    // },
-    // {
-    //   title: 'Church Website',
-    //   image: 'https://picsum.photos/id/239/400/300',
-    //   stack: ['Vue.js', 'Firebase'],
-    //   highlight:
-    //     'A church website to share upcoming events, stream services, and manage the community with ease.',
-    //   link: 'https://sekolahcerdasbangsa.sch.id',
-    // },
+    {
+      title: 'Church Website',
+      image: '/gppk.png',
+      stack: ['React.js', 'Node.js', 'MySQL'],
+      highlight:
+        'A church website to share upcoming events, stream services, and manage the community with ease.',
+      link: 'https://gppkcbn.org',
+    },
     {
       title: 'Sekolah Cerdas Bangsa',
       image: '/webcerdasbangsa.png',
