@@ -21,17 +21,16 @@ const ContactFooter = () => {
           className="flex flex-col items-center hover:text-gray-300 transition duration-300"
         >
           <FaLinkedin className="text-4xl mb-2 hover:scale-110 transition-transform" />
-          <span className="text-lg">LinkedIn</span>
+          <span className="text-lg">LinkedIn : Heriyanto Sitorus</span>
         </a>
         {/* Email */}
         <a
-          href="mailto:heriyantositorus14@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col items-center hover:text-gray-300 transition duration-300"
         >
           <FaEnvelope className="text-4xl mb-2 hover:scale-110 transition-transform" />
-          <span className="text-lg">Email</span>
+          <span className="text-lg">Email : heriyantositorus14@gmail.com</span>
         </a>
         {/* WhatsApp */}
         <a
@@ -41,7 +40,7 @@ const ContactFooter = () => {
           className="flex flex-col items-center hover:text-gray-300 transition duration-300"
         >
           <FaWhatsapp className="text-4xl mb-2 hover:scale-110 transition-transform" />
-          <span className="text-lg">WhatsApp</span>
+          <span className="text-lg">WhatsApp : 087781018141</span>
         </a>
       </div>
 
