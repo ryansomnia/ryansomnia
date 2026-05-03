@@ -6,8 +6,10 @@ import Navbar from './components/Navbar';
 import Header from './components/Header';
 import BioData from './components/Biodata';
 import Stack from './components/Stack';
-import Project from './components/Project';
+import ProjectSection from './components/Project';
 import ContactFooter from './components/ContactFooter';
+import ScrollReveal from "./components/ScrollReveal";
+import CreativeWork from "./components/CreativeWork";
 
 export default function Home() {
   const bioDataRef = useRef(null);
@@ -34,20 +36,27 @@ export default function Home() {
 
   return (
 
-    <div>
+    <>
     <Navbar onAboutClick={scrollToBioData} onProjectsClick={scrollToProject} onContactClick={scrollToContact} />
-      <Header />
-      <section ref={bioDataRef}>
+    <Header />
+      <ScrollReveal>
         <BioData />
-      </section>
-      <Stack />
-      <section ref={projectDataRef}>
-        <Project />
-      </section>
-      <section ref={contactDataRef}>
+      </ScrollReveal>
+      <ScrollReveal delay={100}>
+        <Stack />
+      </ScrollReveal>
+      <ScrollReveal delay={100}>
+        <ProjectSection />
+      </ScrollReveal>
+      <ScrollReveal delay={100}>
+  <CreativeWork />
+</ScrollReveal>
+      <ScrollReveal delay={100}>
         <ContactFooter />
-      </section>
-    </div>
+      </ScrollReveal>
+    </>
+
+    
     
   );
 }
