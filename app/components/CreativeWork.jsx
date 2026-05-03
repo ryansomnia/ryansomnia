@@ -142,8 +142,13 @@ const CreativeWork = () => {
 <div className="border-t border-white/[0.06] pt-4 grid grid-cols-3 gap-1.5">
   {posts.map(({ image, url: postUrl }, i) => (
     <a key={i} href={postUrl} target="_blank" rel="noopener noreferrer" className="relative aspect-square overflow-hidden rounded-sm group">
-      <Image src={image} alt={`${account} post ${i + 1}`} fill className="object-cover transition-transform duration-300 group-hover:scale-105" />
-      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+<Image
+  src={image}
+  alt={`${account} post ${i + 1}`}
+  fill
+  sizes="(max-width: 640px) 33vw, (max-width: 1024px) 15vw, 120px"
+  className="object-cover transition-transform duration-300 group-hover:scale-105"
+/>      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
         <svg width="16" height="16" viewBox="0 0 12 12" fill="none" stroke="white" strokeWidth="1.5" className="opacity-0 group-hover:opacity-100 transition-opacity">
           <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4.5M9.5 2.5V7.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>

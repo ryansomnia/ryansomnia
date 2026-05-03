@@ -108,8 +108,13 @@ const ProjectCard = ({ project }) => (
 const ProjectCardWide = ({ project }) => (
   <div className="group relative bg-[#111] border border-white/[0.06] rounded-sm overflow-hidden hover:border-emerald-300/30 transition-colors duration-300 grid grid-cols-1 sm:grid-cols-[2fr_3fr]">
     <div className="relative w-full h-48 sm:h-full min-h-[180px] overflow-hidden">
-      <Image src={project.image} alt={project.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
-      <div className="absolute inset-0 bg-[#0a0a0a]/40" />
+    <Image
+  src={project.image}
+  alt={project.title}
+  fill
+  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
+  className="object-cover transition-transform duration-500 group-hover:scale-105"
+/>      <div className="absolute inset-0 bg-[#0a0a0a]/40" />
       <span className="absolute top-4 left-4 font-serif text-4xl font-bold text-white/10 leading-none select-none">
         {project.number}
       </span>

@@ -48,12 +48,13 @@ const Header = () => {
 
         <div className="relative z-10">
           <div className="relative w-48 h-60">
-            <Image
-              src="/head.jpg"
-              alt="Heriyanto Sitorus"
-              fill
-              className="object-cover rounded-sm border border-emerald-300/20"
-            />
+          <Image
+  src="/head.jpg"
+  alt="Heriyanto Sitorus"
+  fill
+  sizes="(max-width: 768px) 100vw, 50vw"
+  className="object-cover rounded-sm border border-emerald-300/20"
+/>
             <div className="absolute -bottom-3 -right-3 w-48 h-60 border border-emerald-300/20 rounded-sm -z-10" />
             <span className="absolute -left-px bottom-4 bg-emerald-300 text-[#0a0a0a] text-[10px] uppercase tracking-[0.12em] font-medium px-2.5 py-1">
               Software Developer

@@ -37,12 +37,13 @@ const BioData = () => {
           {/* Left — photo + quick facts */}
           <div className="flex flex-col gap-6">
             <div className="relative w-full aspect-[4/5] max-w-[320px]">
-              <Image
-                src="/bio.png"
-                alt="Heriyanto Sitorus"
-                fill
-                className="object-cover rounded-sm border border-white/[0.08]"
-              />
+            <Image
+  src="/bio.png"
+  alt="Heriyanto Sitorus"
+  fill
+  sizes="(max-width: 768px) 100vw, 320px"
+  className="object-cover rounded-sm border border-white/[0.08]"
+/>
               <div className="absolute -bottom-3 -right-3 w-full h-full border border-emerald-300/20 rounded-sm -z-10" />
             </div>
 
