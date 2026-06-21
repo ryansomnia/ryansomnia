@@ -66,7 +66,7 @@ const CreativeWork = () => {
         <div className="grid md:grid-cols-2 gap-4 items-start mb-16">
           <div>
             <h2 className="font-serif text-4xl lg:text-5xl font-bold mb-4">
-              Beyohnd <span className="italic text-emerald-300">Code</span>
+              Beyond <span className="italic text-emerald-300">Code</span>
             </h2>
             <p className="text-sm font-light text-[#9d9b96] leading-relaxed max-w-sm">
               Outside of engineering, I create visual content — editing videos with CapCut, designing graphics with Canva, and managing social media for multiple accounts.

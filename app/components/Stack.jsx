@@ -5,10 +5,10 @@ import { FaGolang } from "react-icons/fa6";
 import { SiMicrosoftsqlserver, SiMysql, SiMongodb, SiApachekafka } from "react-icons/si";
 
 const levelConfig = {
-  "MID": { label: "Mid", color: "text-emerald-300", bar: "bg-emerald-300", width: "w-[65%]" },
-  "Junior": { label: "Junior", color: "text-amber-300", bar: "bg-amber-300", width: "w-[40%]" },
-  "On Learning": { label: "Learning", color: "text-[#9d9b96]", bar: "bg-[#9d9b96]", width: "w-[20%]" },
-  "Low Intermediate": { label: "Low–Mid", color: "text-amber-300", bar: "bg-amber-300", width: "w-[35%]" },
+  "MID": { label: "Mid", color: "text-emerald-300", bar: "bg-emerald-300", width: "w-[65%]", glow: "shadow-[0_0_6px_rgba(110,231,183,0.7)]" },
+  "Junior": { label: "Junior", color: "text-amber-300", bar: "bg-amber-300", width: "w-[40%]", glow: "shadow-[0_0_6px_rgba(252,211,77,0.6)]" },
+  "On Learning": { label: "Learning", color: "text-[#9d9b96]", bar: "bg-[#9d9b96]", width: "w-[20%]", glow: "" },
+  "Low Intermediate": { label: "Low–Mid", color: "text-amber-300", bar: "bg-amber-300", width: "w-[35%]", glow: "shadow-[0_0_6px_rgba(252,211,77,0.6)]" },
 };
 
 const skills = [
@@ -26,8 +26,12 @@ const skills = [
 
 const Stack = () => {
   return (
-    <section id="stack" className="bg-[#0a0a0a] py-24 px-6 lg:px-16">
-      <div className="max-w-6xl mx-auto">
+    <section id="stack" className="relative bg-[#0a0a0a] py-24 px-6 lg:px-16 overflow-hidden">
+
+      {/* Ambient glow */}
+      <div className="pointer-events-none absolute top-10 right-0 w-[380px] h-[380px] bg-emerald-500/[0.05] rounded-full blur-[120px]" />
+
+      <div className="relative z-10 max-w-6xl mx-auto">
 
         {/* Section label */}
         <div className="flex items-center gap-3 mb-16">
@@ -37,7 +41,7 @@ const Stack = () => {
         </div>
 
         <h2 className="font-serif text-4xl lg:text-5xl font-bold mb-3">
-          My <span className="italic text-emerald-300">Skills</span>
+          My <span className="italic text-emerald-300 drop-shadow-[0_0_20px_rgba(110,231,183,0.3)]">Skills</span>
         </h2>
         <p className="text-sm font-light text-[#9d9b96] mb-14 max-w-md">
           Technologies I work with daily and others I am actively exploring.
@@ -48,10 +52,14 @@ const Stack = () => {
             const Icon = skill.icon;
             const cfg = levelConfig[skill.level];
             return (
-              <div key={skill.name} className="group flex items-center gap-4 p-4 bg-[#111] border border-white/[0.06] rounded-sm hover:border-emerald-300/30 transition-colors duration-300">
-
+              <div
+                key={skill.name}
+                className="group flex items-center gap-4 p-4 bg-white/[0.03] backdrop-blur-sm border border-white/[0.07] rounded-sm
+                           hover:border-emerald-300/30 hover:bg-white/[0.05]
+                           transition-all duration-300"
+              >
                 {/* Icon */}
-                <div className="w-10 h-10 shrink-0 flex items-center justify-center bg-[#1a1a1a] rounded-sm border border-white/[0.06] group-hover:border-emerald-300/20 transition-colors">
+                <div className="w-10 h-10 shrink-0 flex items-center justify-center bg-white/[0.04] rounded-sm border border-white/[0.07] group-hover:border-emerald-300/25 transition-colors duration-300">
                   <Icon size={20} className={cfg.color} />
                 </div>
 
@@ -64,8 +72,10 @@ const Stack = () => {
                     </span>
                   </div>
                   {/* Progress bar */}
-                  <div className="w-full h-px bg-white/[0.08]">
-                    <div className={`h-px ${cfg.bar} ${cfg.width} transition-all duration-500`} />
+                  <div className="w-full h-[3px] bg-white/[0.08] rounded-full overflow-hidden">
+                    <div
+                      className={`h-full ${cfg.bar} ${cfg.width} ${cfg.glow} rounded-full transition-all duration-500`}
+                    />
                   </div>
                   <p className="text-[10px] text-[#9d9b96] mt-1.5 uppercase tracking-[0.1em]">{skill.category}</p>
                 </div>

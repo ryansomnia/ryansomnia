@@ -22,8 +22,12 @@ const freelance = [
 
 const BioData = () => {
   return (
-    <section id="about" className="min-h-screen bg-[#0a0a0a] text-[#f0ede6] py-24 px-6 lg:px-16">
-      <div className="max-w-6xl mx-auto">
+    <section id="about" className="relative min-h-screen bg-[#0a0a0a] text-[#f0ede6] py-24 px-6 lg:px-16 overflow-hidden">
+
+      {/* Ambient glow */}
+      <div className="pointer-events-none absolute top-40 -left-40 w-[400px] h-[400px] bg-emerald-500/[0.06] rounded-full blur-[130px]" />
+
+      <div className="relative z-10 max-w-6xl mx-auto">
 
         {/* Section label */}
         <div className="flex items-center gap-3 mb-16">
@@ -37,24 +41,32 @@ const BioData = () => {
           {/* Left — photo + quick facts */}
           <div className="flex flex-col gap-6">
             <div className="relative w-full aspect-[4/5] max-w-[320px]">
-            <Image
-  src="/bio.png"
-  alt="Heriyanto Sitorus"
-  fill
-  sizes="(max-width: 768px) 100vw, 320px"
-  className="object-cover rounded-sm border border-white/[0.08]"
-/>
+              {/* Glow behind photo */}
+              <div className="absolute inset-0 -m-6 bg-emerald-400/10 rounded-full blur-[70px] -z-20" />
+
+              <Image
+                src="/bio.png"
+                alt="Heriyanto Sitorus"
+                fill
+                sizes="(max-width: 768px) 100vw, 320px"
+                className="object-cover rounded-sm border border-white/[0.08]"
+              />
               <div className="absolute -bottom-3 -right-3 w-full h-full border border-emerald-300/20 rounded-sm -z-10" />
             </div>
 
-            {/* Quick facts */}
-            <div className="flex flex-col gap-3 pt-4">
+            {/* Quick facts — glass card */}
+            <div className="flex flex-col gap-3 pt-2 p-5 bg-white/[0.03] backdrop-blur-md border border-white/[0.08] rounded-sm">
               {[
                 { label: "Degree", value: "S1 Ilmu Komputer" },
                 { label: "Status", value: "Full-time + Freelance" },
                 { label: "Based", value: "Indonesia" },
-              ].map(({ label, value }) => (
-                <div key={label} className="flex justify-between items-baseline border-b border-white/[0.06] pb-3">
+              ].map(({ label, value }, i) => (
+                <div
+                  key={label}
+                  className={`flex justify-between items-baseline ${
+                    i < 2 ? "border-b border-white/[0.06] pb-3" : ""
+                  }`}
+                >
                   <span className="text-[10px] uppercase tracking-[0.14em] text-[#9d9b96]">{label}</span>
                   <span className="text-[13px] font-medium text-[#f0ede6]">{value}</span>
                 </div>
@@ -68,7 +80,7 @@ const BioData = () => {
             {/* Intro */}
             <div>
               <h2 className="font-serif text-4xl lg:text-5xl font-bold leading-tight mb-4">
-                My <span className="italic text-emerald-300">Resume</span>
+                My <span className="italic text-emerald-300 drop-shadow-[0_0_20px_rgba(110,231,183,0.3)]">Resume</span>
               </h2>
               <p className="text-sm font-light leading-relaxed text-[#9d9b96] max-w-lg">
                 Software Engineer with 5+ years of experience building production-grade systems in the insurance and healthcare sector, alongside freelance web projects.
@@ -94,8 +106,13 @@ const BioData = () => {
 
                   <div className="flex flex-col gap-3">
                     {exp.items.map(({ title, desc }) => (
-                      <div key={title} className="flex gap-4 p-4 bg-[#111] border border-white/[0.06] rounded-sm">
-                        <div className="w-1 shrink-0 bg-emerald-300/40 rounded-full" />
+                      <div
+                        key={title}
+                        className="group flex gap-4 p-4 bg-white/[0.03] backdrop-blur-sm border border-white/[0.07] rounded-sm
+                                   hover:border-emerald-300/25 hover:bg-white/[0.05]
+                                   transition-all duration-300"
+                      >
+                        <div className="w-1 shrink-0 bg-emerald-300/40 rounded-full group-hover:bg-emerald-300/70 group-hover:shadow-[0_0_8px_rgba(110,231,183,0.5)] transition-all duration-300" />
                         <div>
                           <p className="text-[12px] font-medium text-[#f0ede6] mb-0.5">{title}</p>
                           <p className="text-[12px] font-light text-[#9d9b96] leading-relaxed">{desc}</p>
@@ -116,7 +133,12 @@ const BioData = () => {
 
               <div className="grid sm:grid-cols-2 gap-4">
                 {freelance.map(({ title, desc }) => (
-                  <div key={title} className="p-4 bg-[#111] border border-white/[0.06] rounded-sm">
+                  <div
+                    key={title}
+                    className="p-4 bg-white/[0.03] backdrop-blur-sm border border-white/[0.07] rounded-sm
+                               hover:border-emerald-300/25 hover:bg-white/[0.05]
+                               transition-all duration-300"
+                  >
                     <p className="text-[12px] font-medium text-[#f0ede6] mb-1.5">{title}</p>
                     <p className="text-[12px] font-light text-[#9d9b96] leading-relaxed">{desc}</p>
                   </div>

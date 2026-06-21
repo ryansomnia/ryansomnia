@@ -41,8 +41,12 @@ const projects = [
 
 const ProjectSection = () => {
   return (
-    <section id="projects" className="bg-[#0a0a0a] py-16 md:py-24 px-4 sm:px-6 lg:px-16">
-      <div className="max-w-6xl mx-auto">
+    <section id="projects" className="relative bg-[#0a0a0a] py-16 md:py-24 px-4 sm:px-6 lg:px-16 overflow-hidden">
+
+      {/* Ambient glow */}
+      <div className="pointer-events-none absolute top-1/4 -right-40 w-[450px] h-[450px] bg-emerald-500/[0.05] rounded-full blur-[140px]" />
+
+      <div className="relative z-10 max-w-6xl mx-auto">
 
         {/* Section label */}
         <div className="flex items-center gap-3 mb-10 md:mb-16">
@@ -52,7 +56,7 @@ const ProjectSection = () => {
         </div>
 
         <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold mb-3">
-          My <span className="italic text-emerald-300">Work</span>
+          My <span className="italic text-emerald-300 drop-shadow-[0_0_20px_rgba(110,231,183,0.3)]">Work</span>
         </h2>
         <p className="text-sm font-light text-[#9d9b96] mb-10 md:mb-14 max-w-md">
           A selection of projects built professionally and as freelance work.
@@ -82,12 +86,16 @@ const ProjectSection = () => {
 };
 
 const ProjectCard = ({ project }) => (
-  <div className="group relative bg-[#111] border border-white/[0.06] rounded-sm overflow-hidden hover:border-emerald-300/30 transition-colors duration-300 flex flex-col">
+  <div
+    className="group relative bg-white/[0.03] backdrop-blur-sm border border-white/[0.07] rounded-sm overflow-hidden flex flex-col
+               hover:border-emerald-300/30 hover:-translate-y-1 hover:shadow-[0_8px_30px_-10px_rgba(110,231,183,0.15)]
+               transition-all duration-300"
+  >
     <div className="relative w-full h-44 sm:h-48 overflow-hidden shrink-0">
       <Image src={project.image} alt={project.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
-      <div className="absolute inset-0 bg-[#0a0a0a]/40" />
-      <span className="absolute top-4 left-4 font-serif text-4xl font-bold text-white/10 leading-none select-none">
-        {project.number}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/70 via-transparent to-transparent" />
+      <span className="absolute top-3 left-3 flex items-center justify-center w-8 h-8 bg-white/[0.06] backdrop-blur-md border border-white/10 rounded-sm">
+        <span className="font-serif text-xs font-bold text-emerald-300/80">{project.number}</span>
       </span>
     </div>
     <div className="p-5 flex flex-col flex-1">
@@ -95,7 +103,11 @@ const ProjectCard = ({ project }) => (
       <p className="text-[12px] font-light text-[#9d9b96] leading-relaxed mb-4 flex-1">{project.highlight}</p>
       <div className="flex flex-wrap gap-1.5 mb-4">
         {project.stack.map((tech) => (
-          <span key={tech} className="text-[10px] uppercase tracking-[0.1em] px-2 py-1 border border-white/[0.08] text-[#9d9b96] rounded-sm">
+          <span
+            key={tech}
+            className="text-[10px] uppercase tracking-[0.1em] px-2 py-1 bg-white/[0.03] border border-white/[0.08] text-[#9d9b96] rounded-sm
+                       hover:border-emerald-300/20 hover:text-[#f0ede6] transition-colors duration-200"
+          >
             {tech}
           </span>
         ))}
@@ -106,17 +118,22 @@ const ProjectCard = ({ project }) => (
 );
 
 const ProjectCardWide = ({ project }) => (
-  <div className="group relative bg-[#111] border border-white/[0.06] rounded-sm overflow-hidden hover:border-emerald-300/30 transition-colors duration-300 grid grid-cols-1 sm:grid-cols-[2fr_3fr]">
+  <div
+    className="group relative bg-white/[0.03] backdrop-blur-sm border border-white/[0.07] rounded-sm overflow-hidden grid grid-cols-1 sm:grid-cols-[2fr_3fr]
+               hover:border-emerald-300/30 hover:shadow-[0_8px_30px_-10px_rgba(110,231,183,0.15)]
+               transition-all duration-300"
+  >
     <div className="relative w-full h-48 sm:h-full min-h-[180px] overflow-hidden">
-    <Image
-  src={project.image}
-  alt={project.title}
-  fill
-  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
-  className="object-cover transition-transform duration-500 group-hover:scale-105"
-/>      <div className="absolute inset-0 bg-[#0a0a0a]/40" />
-      <span className="absolute top-4 left-4 font-serif text-4xl font-bold text-white/10 leading-none select-none">
-        {project.number}
+      <Image
+        src={project.image}
+        alt={project.title}
+        fill
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
+        className="object-cover transition-transform duration-500 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/70 via-transparent to-transparent sm:bg-gradient-to-r" />
+      <span className="absolute top-3 left-3 flex items-center justify-center w-8 h-8 bg-white/[0.06] backdrop-blur-md border border-white/10 rounded-sm">
+        <span className="font-serif text-xs font-bold text-emerald-300/80">{project.number}</span>
       </span>
     </div>
     <div className="p-5 sm:p-6 flex flex-col justify-between">
@@ -125,7 +142,11 @@ const ProjectCardWide = ({ project }) => (
         <p className="text-[12px] font-light text-[#9d9b96] leading-relaxed mb-4">{project.highlight}</p>
         <div className="flex flex-wrap gap-1.5 mb-5">
           {project.stack.map((tech) => (
-            <span key={tech} className="text-[10px] uppercase tracking-[0.1em] px-2 py-1 border border-white/[0.08] text-[#9d9b96] rounded-sm">
+            <span
+              key={tech}
+              className="text-[10px] uppercase tracking-[0.1em] px-2 py-1 bg-white/[0.03] border border-white/[0.08] text-[#9d9b96] rounded-sm
+                         hover:border-emerald-300/20 hover:text-[#f0ede6] transition-colors duration-200"
+            >
               {tech}
             </span>
           ))}
@@ -140,9 +161,23 @@ const ProjectLinks = ({ links }) => (
   links.length > 0 ? (
     <div className="flex flex-wrap gap-4">
       {links.map(({ label, url }) => (
-        <a key={label} href={url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.12em] font-medium text-emerald-300 hover:text-emerald-200 transition-colors">
+        <a
+          key={label}
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group/link inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.12em] font-medium text-emerald-300 hover:text-emerald-200 transition-colors"
+        >
           {label}
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 12 12"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            className="transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
+          >
             <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4.5M9.5 2.5V7.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </a>
