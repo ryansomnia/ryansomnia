@@ -16,138 +16,146 @@ const experiences = [
 ];
 
 const freelance = [
-  { title: "QR Web – Hospital Project", desc: "Web app for handling PCR test documents and generating QR codes as proof of completion." },
+  { title: "QR Web — Hospital Project", desc: "Web app for handling PCR test documents and generating QR codes as proof of completion." },
   { title: "Private School Landing Page, Bogor", desc: "Landing page with admin panel for content management." },
+];
+
+const facts = [
+  { label: "Degree", value: "S1 Ilmu Komputer" },
+  { label: "Status", value: "Full-time + Freelance" },
+  { label: "Based", value: "Indonesia" },
 ];
 
 const BioData = () => {
   return (
-    <section id="about" className="relative min-h-screen bg-[#0a0a0a] text-[#f0ede6] py-24 px-6 lg:px-16 overflow-hidden">
+    <section id="about" className="relative bg-[#060b14] text-[#f0f4f7] py-24 px-6 lg:px-16 overflow-hidden">
 
       {/* Ambient glow */}
-      <div className="pointer-events-none absolute top-40 -left-40 w-[400px] h-[400px] bg-emerald-500/[0.06] rounded-full blur-[130px]" />
+      <div className="pointer-events-none absolute top-40 -left-40 w-[400px] h-[400px] bg-[#4ECDC4]/[0.06] rounded-full blur-[130px]" />
+      <div className="pointer-events-none absolute bottom-0 right-0 w-[380px] h-[380px] bg-[#0a3d62]/[0.18] rounded-full blur-[140px]" />
 
       <div className="relative z-10 max-w-6xl mx-auto">
 
         {/* Section label */}
-        <div className="flex items-center gap-3 mb-16">
-          <span className="text-[10px] uppercase tracking-[0.2em] text-[#9d9b96]">02</span>
-          <div className="w-8 h-px bg-emerald-300" />
-          <span className="text-[10px] uppercase tracking-[0.2em] text-emerald-300">About & Resume</span>
+        <div className="flex items-center gap-3 mb-12">
+          <span className="text-[10px] uppercase tracking-[0.2em] text-[#9db4c4]">02</span>
+          <div className="w-8 h-px bg-[#4ECDC4]" />
+          <span className="text-[10px] uppercase tracking-[0.2em] text-[#4ECDC4]">About & Resume</span>
         </div>
 
-        <div className="grid md:grid-cols-[320px_1fr] gap-12 lg:gap-20">
+        {/* Top row: photo (organic clip) + intro side by side, full width */}
+        <div className="grid md:grid-cols-[280px_1fr] gap-10 lg:gap-16 mb-16 items-center">
 
-          {/* Left — photo + quick facts */}
-          <div className="flex flex-col gap-6">
-            <div className="relative w-full aspect-[4/5] max-w-[320px]">
-              {/* Glow behind photo */}
-              <div className="absolute inset-0 -m-6 bg-emerald-400/10 rounded-full blur-[70px] -z-20" />
-
+          {/* Photo with organic wave clip-path */}
+          <div className="relative w-full max-w-[280px] mx-auto md:mx-0">
+            <div className="absolute inset-0 -m-8 bg-[#4ECDC4]/10 rounded-full blur-[80px] -z-10" />
+            <div
+              className="relative w-full aspect-square overflow-hidden"
+              style={{
+                clipPath:
+                  "path('M0,60 C0,20 20,0 60,0 L220,0 C260,0 280,20 280,60 L280,220 C280,260 255,280 210,275 C160,270 120,300 70,280 C25,262 0,250 0,210 Z')",
+              }}
+            >
               <Image
                 src="/bio.png"
                 alt="Heriyanto Sitorus"
                 fill
-                sizes="(max-width: 768px) 100vw, 320px"
-                className="object-cover rounded-sm border border-white/[0.08]"
+                sizes="280px"
+                className="object-cover"
               />
-              <div className="absolute -bottom-3 -right-3 w-full h-full border border-emerald-300/20 rounded-sm -z-10" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#060b14]/30 via-transparent to-transparent" />
             </div>
-
-            {/* Quick facts — glass card */}
-            <div className="flex flex-col gap-3 pt-2 p-5 bg-white/[0.03] backdrop-blur-md border border-white/[0.08] rounded-sm">
-              {[
-                { label: "Degree", value: "S1 Ilmu Komputer" },
-                { label: "Status", value: "Full-time + Freelance" },
-                { label: "Based", value: "Indonesia" },
-              ].map(({ label, value }, i) => (
-                <div
-                  key={label}
-                  className={`flex justify-between items-baseline ${
-                    i < 2 ? "border-b border-white/[0.06] pb-3" : ""
-                  }`}
-                >
-                  <span className="text-[10px] uppercase tracking-[0.14em] text-[#9d9b96]">{label}</span>
-                  <span className="text-[13px] font-medium text-[#f0ede6]">{value}</span>
-                </div>
-              ))}
-            </div>
+            {/* Wave accent line under photo */}
+            <svg className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-32 h-3" viewBox="0 0 120 12" fill="none">
+              <path d="M0 6 Q 15 0, 30 6 T 60 6 T 90 6 T 120 6" stroke="#4ECDC4" strokeWidth="1.5" strokeLinecap="round" opacity="0.6" />
+            </svg>
           </div>
 
-          {/* Right — content */}
-          <div className="flex flex-col gap-12">
-
-            {/* Intro */}
+          {/* Intro + quick facts */}
+          <div className="flex flex-col gap-7">
             <div>
               <h2 className="font-serif text-4xl lg:text-5xl font-bold leading-tight mb-4">
-                My <span className="italic text-emerald-300 drop-shadow-[0_0_20px_rgba(110,231,183,0.3)]">Resume</span>
+                My <span className="italic text-[#4ECDC4] drop-shadow-[0_0_20px_rgba(78,205,196,0.3)]">Resume</span>
               </h2>
-              <p className="text-sm font-light leading-relaxed text-[#9d9b96] max-w-lg">
+              <p className="text-sm font-light leading-relaxed text-[#9db4c4] max-w-lg">
                 Software Engineer with 5+ years of experience building production-grade systems in the insurance and healthcare sector, alongside freelance web projects.
               </p>
             </div>
 
-            {/* Work Experience */}
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <span className="text-[10px] uppercase tracking-[0.16em] text-emerald-300">Work Experience</span>
-                <div className="flex-1 h-px bg-white/[0.06]" />
-              </div>
-
-              {experiences.map((exp) => (
-                <div key={exp.company}>
-                  <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-5 gap-1">
-                    <div>
-                      <p className="text-base font-medium text-[#f0ede6]">{exp.company}</p>
-                      <p className="text-[12px] text-emerald-300 tracking-wide mt-0.5">{exp.role}</p>
-                    </div>
-                    <span className="text-[11px] text-[#9d9b96] tracking-wide shrink-0">{exp.period}</span>
-                  </div>
-
-                  <div className="flex flex-col gap-3">
-                    {exp.items.map(({ title, desc }) => (
-                      <div
-                        key={title}
-                        className="group flex gap-4 p-4 bg-white/[0.03] backdrop-blur-sm border border-white/[0.07] rounded-sm
-                                   hover:border-emerald-300/25 hover:bg-white/[0.05]
-                                   transition-all duration-300"
-                      >
-                        <div className="w-1 shrink-0 bg-emerald-300/40 rounded-full group-hover:bg-emerald-300/70 group-hover:shadow-[0_0_8px_rgba(110,231,183,0.5)] transition-all duration-300" />
-                        <div>
-                          <p className="text-[12px] font-medium text-[#f0ede6] mb-0.5">{title}</p>
-                          <p className="text-[12px] font-light text-[#9d9b96] leading-relaxed">{desc}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+            {/* Quick facts — horizontal stat row, not vertical list */}
+            <div className="flex flex-wrap gap-3">
+              {facts.map(({ label, value }) => (
+                <div
+                  key={label}
+                  className="flex-1 min-w-[140px] bg-white/[0.03] backdrop-blur-md border border-white/[0.08] rounded-sm px-4 py-3
+                             hover:border-[#4ECDC4]/25 transition-colors duration-300"
+                >
+                  <p className="text-[9px] uppercase tracking-[0.16em] text-[#9db4c4] mb-1">{label}</p>
+                  <p className="text-[13px] font-medium text-[#f0f4f7] leading-tight">{value}</p>
                 </div>
               ))}
             </div>
-
-            {/* Freelance */}
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <span className="text-[10px] uppercase tracking-[0.16em] text-emerald-300">Freelance Projects</span>
-                <div className="flex-1 h-px bg-white/[0.06]" />
-              </div>
-
-              <div className="grid sm:grid-cols-2 gap-4">
-                {freelance.map(({ title, desc }) => (
-                  <div
-                    key={title}
-                    className="p-4 bg-white/[0.03] backdrop-blur-sm border border-white/[0.07] rounded-sm
-                               hover:border-emerald-300/25 hover:bg-white/[0.05]
-                               transition-all duration-300"
-                  >
-                    <p className="text-[12px] font-medium text-[#f0ede6] mb-1.5">{title}</p>
-                    <p className="text-[12px] font-light text-[#9d9b96] leading-relaxed">{desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
           </div>
         </div>
+
+        {/* Work Experience — timeline rail layout */}
+        <div className="mb-16">
+          <div className="flex items-center gap-3 mb-8">
+            <span className="text-[10px] uppercase tracking-[0.16em] text-[#4ECDC4]">Work Experience</span>
+            <div className="flex-1 h-px bg-white/[0.06]" />
+          </div>
+
+          {experiences.map((exp) => (
+            <div key={exp.company} className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-8 gap-1">
+              <div>
+                <p className="text-base font-medium text-[#f0f4f7]">{exp.company}</p>
+                <p className="text-[12px] text-[#4ECDC4] tracking-wide mt-0.5">{exp.role}</p>
+              </div>
+              <span className="text-[11px] text-[#9db4c4] tracking-wide shrink-0">{exp.period}</span>
+            </div>
+          ))}
+
+          {/* Timeline rail */}
+          <div className="relative pl-8">
+            <div className="absolute left-[5px] top-1 bottom-1 w-px bg-gradient-to-b from-[#4ECDC4]/60 via-[#4ECDC4]/20 to-transparent" />
+            <div className="flex flex-col gap-7">
+              {experiences[0].items.map(({ title, desc }) => (
+                <div key={title} className="relative">
+                  <span className="absolute -left-8 top-1 w-2.5 h-2.5 rounded-full bg-[#060b14] border-2 border-[#4ECDC4] shadow-[0_0_10px_rgba(78,205,196,0.5)]" />
+                  <p className="text-[13px] font-medium text-[#f0f4f7] mb-1">{title}</p>
+                  <p className="text-[12px] font-light text-[#9db4c4] leading-relaxed max-w-xl">{desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Freelance — editorial list with large index numbers */}
+        <div>
+          <div className="flex items-center gap-3 mb-8">
+            <span className="text-[10px] uppercase tracking-[0.16em] text-[#4ECDC4]">Freelance Projects</span>
+            <div className="flex-1 h-px bg-white/[0.06]" />
+          </div>
+
+          <div className="flex flex-col">
+            {freelance.map(({ title, desc }, i) => (
+              <div
+                key={title}
+                className="group relative flex items-start gap-6 py-5 border-t border-white/[0.06] first:border-t-0
+                           hover:bg-white/[0.02] transition-colors duration-300"
+              >
+                <span className="font-serif text-3xl font-bold text-white/[0.06] leading-none shrink-0 group-hover:text-[#4ECDC4]/15 transition-colors duration-300">
+                  0{i + 1}
+                </span>
+                <div className="pt-1">
+                  <p className="text-[13px] font-medium text-[#f0f4f7] mb-1">{title}</p>
+                  <p className="text-[12px] font-light text-[#9db4c4] leading-relaxed max-w-lg">{desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );

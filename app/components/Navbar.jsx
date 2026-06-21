@@ -38,12 +38,12 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#0a0a0a]/60 backdrop-blur-xl border-b border-white/[0.07]"
+          ? "bg-[#060b14]/60 backdrop-blur-xl border-b border-white/[0.07]"
           : "bg-transparent border-b border-transparent"
       }`}
       style={
         scrolled
-          ? { boxShadow: "0 1px 0 0 rgba(110,231,183,0.08)" }
+          ? { boxShadow: "0 1px 0 0 rgba(78,205,196,0.1)" }
           : undefined
       }
     >
@@ -51,10 +51,10 @@ const Navbar = () => {
 
         <Link
           href="/"
-          className="font-serif text-[17px] font-bold tracking-wide text-[#f0ede6]"
+          className="font-serif text-[17px] font-bold tracking-wide text-[#f0f4f7]"
         >
           Heriyanto{" "}
-          <span className="text-emerald-300 drop-shadow-[0_0_12px_rgba(110,231,183,0.4)]">
+          <span className="text-[#4ECDC4] drop-shadow-[0_0_12px_rgba(78,205,196,0.4)]">
             Sitorus
           </span>
         </Link>
@@ -68,13 +68,13 @@ const Navbar = () => {
                   href={href}
                   className={`text-[11px] uppercase tracking-[0.12em] font-medium transition-colors duration-200 relative py-2 ${
                     isActive
-                      ? "text-emerald-300"
-                      : "text-[#9d9b96] hover:text-[#f0ede6]"
+                      ? "text-[#4ECDC4]"
+                      : "text-[#9db4c4] hover:text-[#f0f4f7]"
                   }`}
                 >
                   {label}
                   {isActive && (
-                    <span className="absolute -bottom-0 left-0 w-full h-px bg-gradient-to-r from-emerald-300 via-emerald-300/70 to-transparent shadow-[0_0_8px_0_rgba(110,231,183,0.6)]" />
+                    <span className="absolute -bottom-0 left-0 w-full h-px bg-gradient-to-r from-[#4ECDC4] via-[#4ECDC4]/70 to-transparent shadow-[0_0_8px_0_rgba(78,205,196,0.6)]" />
                   )}
                 </Link>
               </li>
@@ -84,9 +84,9 @@ const Navbar = () => {
 
         <a
           href="#contact"
-          className="hidden md:block text-[11px] uppercase tracking-[0.1em] font-medium bg-emerald-300 text-[#0a0a0a] px-4 py-2 rounded-sm
-                     shadow-[0_0_18px_-4px_rgba(110,231,183,0.5)]
-                     hover:shadow-[0_0_26px_-2px_rgba(110,231,183,0.7)] hover:-translate-y-0.5
+          className="hidden md:block text-[11px] uppercase tracking-[0.1em] font-medium bg-[#4ECDC4] text-[#060b14] px-4 py-2 rounded-sm
+                     shadow-[0_0_18px_-4px_rgba(78,205,196,0.5)]
+                     hover:shadow-[0_0_26px_-2px_rgba(78,205,196,0.7)] hover:-translate-y-0.5
                      transition-all duration-300"
         >
           Hire Me
@@ -94,7 +94,7 @@ const Navbar = () => {
 
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-[#9d9b96] hover:text-[#f0ede6] transition-colors"
+          className="md:hidden text-[#9db4c4] hover:text-[#f0f4f7] transition-colors"
           aria-label="Toggle menu"
         >
           {isOpen ? (
@@ -110,7 +110,7 @@ const Navbar = () => {
       </div>
 
       <div
-        className={`md:hidden bg-[#0a0a0a]/80 backdrop-blur-xl border-t border-white/[0.07] overflow-hidden transition-all duration-300 ${
+        className={`md:hidden bg-[#060b14]/80 backdrop-blur-xl border-t border-white/[0.07] overflow-hidden transition-all duration-300 ${
           isOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
@@ -124,12 +124,12 @@ const Navbar = () => {
                   onClick={() => setIsOpen(false)}
                   className={`flex items-center gap-2 text-[11px] uppercase tracking-[0.12em] transition-colors ${
                     isActive
-                      ? "text-emerald-300"
-                      : "text-[#9d9b96] hover:text-emerald-300"
+                      ? "text-[#4ECDC4]"
+                      : "text-[#9db4c4] hover:text-[#4ECDC4]"
                   }`}
                 >
                   {isActive && (
-                    <span className="w-1 h-1 rounded-full bg-emerald-300 shadow-[0_0_6px_rgba(110,231,183,0.8)]" />
+                    <span className="w-1 h-1 rounded-full bg-[#4ECDC4] shadow-[0_0_6px_rgba(78,205,196,0.8)]" />
                   )}
                   {label}
                 </Link>
