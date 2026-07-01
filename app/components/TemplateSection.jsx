@@ -46,7 +46,7 @@ const templates = [
   },
   {
     number: "05",
-    title: "Clinic Website",
+    title: "Aurora Clinic Website",
     category: "Healthcare",
     image: "/templates/clinic.png",
     description: "Professional Aesthetic Clinic website with doctor profiles and appointment forms.",
@@ -67,13 +67,35 @@ const templates = [
   {
     number: "07",
     title: "Dental Website",
-    category: "Healthcare",
-    image: "/templates/dental.png",
-    description: "Professional Dental website with doctor profiles and appointment forms.",
+    category: "Hotel",
+    image: "/templates/hotel.png",
+    description: "Hotel Website",
     stack: ["Next.js", "Fast Loading"],
-    demo: "#",
+    demo: "https://lumiere-hotel-nu.vercel.app/",
     size: "small",
   },
+  {
+    number: "08",
+    title: "Lumen Clinic Minimalis Website",
+    category: "Healthcare",
+    image: "/templates/lumenClinic.png",
+    description: "Ceritakan kondisi kulit Anda, dan biarkan dokter kami membantu menentukan langkah yang tepat.",
+    stack: ["Next.js", "Fast Loading"],
+    demo: "https://lumen-clinic-eta.vercel.app/",
+    size: "small",
+  },
+  {
+    number: "09",
+    title: "Restaurant Ordering",
+    category: "Food & Beverage",
+    image: "/templates/kitchen.png",
+    description:
+      "A modern restaurant ordering application that lets customers browse menus, place orders, and enjoy a fast, seamless dining experience.",
+    stack: ["Next.js", "Fast Loading"],
+    demo: "https://nusantara-kitchen.vercel.app/",
+    size: "small",
+  }
+  
 ];
 
 export default function TemplateSection() {
